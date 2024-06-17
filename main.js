@@ -154,6 +154,8 @@ const onInfoUpdates2Listener = (info) => {
             const data = JSON.parse(Object.values(info.info.match_info)[0]);
             if (data.is_local === '1') {
                 localPlayerUID = data.origin_id;
+                shouldDisplay = true;
+                sendInitialInventoryData();
                 /*
                 if (!isAuthed) {
                     const authData = {
